@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * Unit test for simple Singleton.
  */
-public class SingletonTest {
+public class RegistryTest {
     Registry current = Registry.getInstance();
 
     @Test
