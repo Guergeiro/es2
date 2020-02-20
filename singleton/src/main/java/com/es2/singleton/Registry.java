@@ -1,8 +1,8 @@
-package com.brenosalles.es2;
+package com.es2.singleton;
 
 public class Registry {
     // Attributes
-    private static Registry instance = new Registry();
+    private static Registry instance;
     private String connectionString;
     private String path;
 
@@ -12,6 +12,9 @@ public class Registry {
 
     // Getters & Setters
     public static Registry getInstance() {
+        if (instance == null) {
+            instance = new Registry();
+        }
         return instance;
     }
 

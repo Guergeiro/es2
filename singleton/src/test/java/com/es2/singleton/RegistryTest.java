@@ -1,4 +1,4 @@
-package com.brenosalles.es2;
+package com.es2.singleton;
 
 import static org.junit.Assert.assertEquals;
 
