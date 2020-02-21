@@ -1,12 +1,10 @@
+os: linux
 language: java
+jdk:
+  - openjdk10
+  - openjdk11
 jobs:
   include:
-    - os: linux
-      dist: xenial
-      jdk: openjdk10
-    - os: linux
-      dist: xenial
-      jdk: openjdk11
     - os: linux
       dist: bionic
       jdk: openjdk10
