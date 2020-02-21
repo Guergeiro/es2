@@ -35,23 +35,9 @@ public class ReusablePoolTest {
     }
 
     @Test(expected = PoolExhaustedException.class)
-    public void testMaxConnectionsInitialized() throws PoolExhaustedException, IOException {
-        Integer maxConnections = 10;
-
-        HttpURLConnection conn = null;
-        for (Integer i = 0; i < maxConnections; i++) {
-            conn = pool.acquire();
-            assertFalse("Max connections not set properly!", conn == null);
-            conn = null;
-        }
-
-        conn = pool.acquire();
-        assertTrue("Max connections not set properly!", conn == null);
-    }
-
-    @Test(expected = PoolExhaustedException.class)
     public void testSetMaximumConnections() throws PoolExhaustedException, IOException {
         Integer maxConnections = (int) (Math.random() * 20);
+        pool.setMaxPoolSize(maxConnections);
 
         HttpURLConnection conn = null;
         for (Integer i = 0; i < maxConnections; i++) {
@@ -60,7 +46,7 @@ public class ReusablePoolTest {
             conn = null;
         }
         conn = pool.acquire();
-        assertFalse("Max connections could not be set properly!", conn == null);
+        assertTrue("Max connections could not be set properly!", conn == null);
     }
 
     @Test(expected = ObjectNotFoundException.class)
