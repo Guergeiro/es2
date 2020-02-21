@@ -8,10 +8,13 @@ jdk:
 jobs:
   include:
     - os: linux
-      dist:
-        - xenial
-        - bionic
+      dist: xenial
+    - os: linux
+      dist: bionic
     - os: osx
+      os_image: xcode10
+    - os: osx
+      os_image: xcode11
 env:
   - WORKDIR=singleton
   - WORKDIR=objectpool
