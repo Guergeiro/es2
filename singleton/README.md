@@ -1,7 +1,9 @@
 # O Padrão de Desenho Singleton
 
 O [Singleton](https://sourcemaking.com/design_patterns/singleton) é um **padrão de criação**, uma vez que condiciona a forma como um objeto é criado. Este padrão obriga à criação de uma **única instância de um objeto** na aplicação, quando ele for **necessário pela primeira vez** ([lazy instantiation](https://en.wikipedia.org/wiki/Lazy_initialization)).
+
 ![singleton](./singleton.png)
+
 A classe Singleton é responsável pela criação do objeto (static), enquanto que os **clientes dessa classe chamam um método assessor para aceder à instância do objecto**. Desta forma, nenhum objeto adquire a posse do objeto Singleton.
 
 ## Exercicio
