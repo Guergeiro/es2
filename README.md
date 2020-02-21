@@ -2,6 +2,10 @@
 
 Repositório que contém tudo relacionado com a unidade curricular de Engenharia de Software 2.
 
+## Status
+
+[![Tests Status](https://img.shields.io/travis/com/Guergeiro/es2?label=tests&logo=travis)](https://travis-ci.com/Guergeiro/es2)
+
 ## Introdução
 
 Os padrões de desenho são uma **abstração** de uma **solução recorrente** para um **problema de desenho** específico. O conceito foi introduzido por [Christopher Alexander em 1979](https://en.wikipedia.org/wiki/Christopher_Alexander).

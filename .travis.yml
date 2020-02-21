@@ -2,10 +2,21 @@ os:
   - linux
   - osx
 language: java
+jdk:
+  - openjdk10
+  - openjdk11
+jobs:
+  include:
+    - os: linux
+      dist:
+        - xenial
+        - bionic
+    - os: osx
 env:
   - WORKDIR=singleton
   - WORKDIR=objectpool
-script:
+before_script:
   - cd $WORKDIR
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
   - mvn test -B
