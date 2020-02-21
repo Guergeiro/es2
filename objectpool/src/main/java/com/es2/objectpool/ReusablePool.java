@@ -8,30 +8,17 @@ import java.util.ArrayList;
 public class ReusablePool {
     // Attributes
     private static ReusablePool instance;
-    // Sets maxSize to default 10
-    private Integer maxSize = 10;
-    // Creates pools
-    private ArrayList<HttpURLConnection> free = new ArrayList<HttpURLConnection>();
-    private ArrayList<HttpURLConnection> used = new ArrayList<HttpURLConnection>();
+    private Integer maxSize;
+    private ArrayList<HttpURLConnection> free;
+    private ArrayList<HttpURLConnection> used;
 
     // Constructor
     private ReusablePool() {
-        // Cleans up connections every 30s
-        new Thread() {
-            public void run() {
-                while (true) {
-                    // Clears connections
-                    ReusablePool.getInstance().resetPool();
-
-                    // Sleeps for 30s
-                    try {
-                        Thread.sleep(30000);
-                    } catch (InterruptedException e) {
-                        System.out.println(e.getMessage());
-                    }
-                }
-            }
-        }.start();
+        // Sets maxSize to default 10
+        this.maxSize = 10;
+        // Creates pools
+        this.free = new ArrayList<HttpURLConnection>();
+        this.used = new ArrayList<HttpURLConnection>();
     };
 
     // Getters & Setters
