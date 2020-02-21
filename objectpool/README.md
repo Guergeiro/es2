@@ -6,7 +6,7 @@ O padrão de desenho [Object Pool](https://sourcemaking.com/design_patterns/obje
 
 ![objectpool](./objectpool.png)
 
-De forma a evitar que um processo fiquei à espera de um objeto, a **pool pode criar novos objetos**. Para evitar desperdício de recursos do sistema, a pool deve implementar um mecanismo de **eliminação periódica de objetos**.
+De forma a evitar que um processo fique à espera de um objeto, a **pool pode criar novos objetos**. Para evitar desperdício de recursos do sistema, a pool deve implementar um mecanismo de **eliminação periódica de objetos**.
 
 Para garantir uma política de criação de objetos coerente, a classe que implementa a pool deve ser [Singleton](../singleton).
 

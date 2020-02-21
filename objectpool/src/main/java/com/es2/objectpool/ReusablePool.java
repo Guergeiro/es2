@@ -16,8 +16,25 @@ public class ReusablePool {
     private ReusablePool() {
         // Sets maxSize to default 10
         this.maxSize = 10;
+        // Creates pools
         this.free = new ArrayList<HttpURLConnection>();
         this.used = new ArrayList<HttpURLConnection>();
+        // Cleans up connections every 30s
+        new Thread() {
+            public void run() {
+                while (true) {
+                    // Clears connections
+                    ReusablePool.getInstance().resetPool();
+
+                    // Sleeps for 30s
+                    try {
+                        Thread.sleep(30000);
+                    } catch (InterruptedException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+            }
+        }.start();
     };
 
     // Getters & Setters
