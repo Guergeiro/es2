@@ -36,7 +36,7 @@ public class ReusablePoolTest {
 
     @Test(expected = PoolExhaustedException.class)
     public void testSetMaximumConnections() throws PoolExhaustedException, IOException {
-        Integer maxConnections = (int) (Math.random() * 20);
+        Integer maxConnections = (int) (Math.random() * 20 + 1);
         pool.setMaxPoolSize(maxConnections);
 
         HttpURLConnection conn = null;
