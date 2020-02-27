@@ -5,6 +5,7 @@ Repositório que contém tudo relacionado com a unidade curricular de Engenharia
 ## Status
 
 [![Tests Status](https://img.shields.io/travis/com/Guergeiro/es2?label=tests&logo=travis)](https://travis-ci.com/Guergeiro/es2)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c99ebc88e81a43ad8cba15f82c3bc6dd)](https://www.codacy.com/manual/breno-salles/es2?utm_source=github.com&utm_medium=referral&utm_content=Guergeiro/es2&utm_campaign=Badge_Grade)
 
 ## Introdução
 
