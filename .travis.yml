@@ -26,6 +26,7 @@ jobs:
 env:
   - WORKDIR=singleton
   - WORKDIR=objectpool
+  - WORKDIR=factorymethod
 before_script:
   - cd $WORKDIR
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
