@@ -4,12 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.es2.singleton</groupId>
-  <artifactId>singleton</artifactId>
+  <groupId>com.es2.bridge</groupId>
+  <artifactId>bridge</artifactId>
   <version>1.0.0</version>
 
-  <name>singleton</name>
-  <url>https://github.com/Guergeiro/es2/tree/master/singleton</url>
+  <name>bridge</name>
+  <url>https://github.com/Guergeiro/es2/tree/master/bridge</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
