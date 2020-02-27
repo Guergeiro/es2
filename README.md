@@ -19,3 +19,4 @@ Existem **3 tipos de padrões**:
 
 1. [Singleton](./singleton)
 2. [ObjectPool](./objectpool)
+3. [Factory Method](./factorymethod)
