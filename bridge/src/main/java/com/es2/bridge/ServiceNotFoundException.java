@@ -1,11 +1,8 @@
 package com.es2.bridge;
 
-/**
- * Hello world!
- *
- */
-public class ServiceNotFoundException {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+public class ServiceNotFoundException extends Exception {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 }
