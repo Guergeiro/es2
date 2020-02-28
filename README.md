@@ -22,3 +22,4 @@ Existem **3 tipos de padrões**:
 2. [ObjectPool](./objectpool)
 3. [Factory Method](./factorymethod)
 4. [Bridge](./bridge)
+5. [Composite](./composite)
