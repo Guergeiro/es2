@@ -1,32 +1,15 @@
-os: linux
+os:
+  - linux
+  - osx
 language: java
 jdk:
   - openjdk10
   - openjdk11
-jobs:
-  include:
-    - os: linux
-      dist: bionic
-      jdk: openjdk10
-    - os: linux
-      dist: bionic
-      jdk: openjdk11
-    - os: osx
-      osx_image: xcode10
-      jdk: openjdk10
-    - os: osx
-      osx_image: xcode10
-      jdk: openjdk11
-    - os: osx
-      osx_image: xcode11
-      jdk: openjdk10
-    - os: osx
-      osx_image: xcode11
-      jdk: openjdk11
 env:
   - WORKDIR=singleton
   - WORKDIR=objectpool
   - WORKDIR=factorymethod
+  - WORKDIR=bridge
 before_script:
   - cd $WORKDIR
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
