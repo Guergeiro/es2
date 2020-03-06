@@ -12,6 +12,7 @@ env:
   - WORKDIR=bridge
   - WORKDIR=composite
   - WORKDIR=memento
+  - WORKDIR=decorator
 before_script:
   - cd $WORKDIR
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V

@@ -24,3 +24,4 @@ Existem **3 tipos de padrões**:
 4. [Bridge](./bridge)
 5. [Composite](./composite)
 6. [Memento](./memento)
+7. [Decorator](./decorator)
