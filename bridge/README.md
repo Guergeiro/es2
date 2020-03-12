@@ -1,4 +1,4 @@
-# O Padrão de Desenho Object Pool
+# O Padrão de Bridge Pattern
 
 O padrão [Bridge](https://sourcemaking.com/design_patterns/bridge) é um [padrão estrutural](https://sourcemaking.com/design_patterns/structural_patterns) que é utilizado em situações onde queremos separar a abstração da implementação do código.
 
