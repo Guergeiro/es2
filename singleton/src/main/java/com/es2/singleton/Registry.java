@@ -13,7 +13,11 @@ public class Registry {
     // Getters & Setters
     public static Registry getInstance() {
         if (instance == null) {
-            instance = new Registry();
+            synchronized (Registry.class) {
+                if (instance == null) {
+                    instance = new Registry();
+                }
+            }
         }
         return instance;
     }
