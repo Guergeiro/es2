@@ -18,10 +18,10 @@ Existem **3 tipos de padrões**:
 
 ## Ordem da implementação
 
-1. [Singleton](./singleton)
-2. [ObjectPool](./objectpool)
-3. [Factory Method](./factorymethod)
-4. [Bridge](./bridge)
-5. [Composite](./composite)
-6. [Memento](./memento)
-7. [Decorator](./decorator)
+1. [Singleton](./src/main/singleton)
+2. [ObjectPool](./src/main/objectpool)
+3. [Factory Method](./src/main/factorymethod)
+4. [Bridge](./src/main/bridge)
+5. [Composite](./src/main/composite)
+6. [Memento](./src/main/memento)
+7. [Decorator](./src/main/decorator)
