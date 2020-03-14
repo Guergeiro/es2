@@ -1,7 +1,6 @@
 package com.es2.factorymethod;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -20,6 +19,6 @@ public class FactoryMethodTest {
 
     @Test(expected = UndefinedProductException.class)
     public void testWrongTypeCreate() throws UndefinedProductException {
-        Product wrongType = FactoryProduct.makeProduct("wrongtype");
+        FactoryProduct.makeProduct("wrongtype");
     }
 }

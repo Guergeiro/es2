@@ -8,7 +8,7 @@ public class APIMoodle implements APIServiceInterface {
     @Override
     public String getContent(String contentId) {
         if ("0".equals(contentId)) {
-            String output = new String();
+            String output = "";
             for (String value : contentMap.values()) {
                 output += value;
             }
