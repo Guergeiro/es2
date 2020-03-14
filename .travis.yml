@@ -6,13 +6,7 @@ jdk:
   - openjdk10
   - openjdk11
 env:
-  - WORKDIR=singleton
-  - WORKDIR=objectpool
-  - WORKDIR=factorymethod
-  - WORKDIR=bridge
-  - WORKDIR=composite
-  - WORKDIR=memento
-  - WORKDIR=decorator
+  - WORKDIR=patterns
 before_script:
   - cd $WORKDIR
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
