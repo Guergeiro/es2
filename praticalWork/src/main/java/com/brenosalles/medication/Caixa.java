@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Caixa extends MedicationComposite {
     // Constructor
+    public Caixa() {
+        super();
+    }
+
     public Caixa(ArrayList<MedicationComponent> medications) {
         super(medications);
     }

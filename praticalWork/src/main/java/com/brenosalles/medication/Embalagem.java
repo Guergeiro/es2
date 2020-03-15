@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Embalagem extends MedicationComposite {
     // Constructor
+    public Embalagem() {
+        super();
+    }
+
     public Embalagem(ArrayList<MedicationComponent> medications) {
         super(medications);
     }

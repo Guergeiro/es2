@@ -7,6 +7,10 @@ public abstract class MedicationComposite implements MedicationComponent {
     protected ArrayList<MedicationComponent> medications;
 
     // Constructor
+    protected MedicationComposite() {
+        this.medications = new ArrayList<MedicationComponent>();
+    }
+
     protected MedicationComposite(ArrayList<MedicationComponent> medications) {
         this.medications = new ArrayList<MedicationComponent>(medications);
     }

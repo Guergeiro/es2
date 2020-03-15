@@ -8,4 +8,9 @@ public abstract class Medication implements MedicationComponent {
     protected Medication(Double price) {
         this.price = price;
     }
+
+    // Methods
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 }

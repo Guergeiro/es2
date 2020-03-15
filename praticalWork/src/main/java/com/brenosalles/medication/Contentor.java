@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Contentor extends MedicationComposite {
     // Constructor
+    public Contentor() {
+        super();
+    }
+
     public Contentor(ArrayList<MedicationComponent> medications) {
         super(medications);
     }
