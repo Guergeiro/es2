@@ -74,7 +74,9 @@ public class MedicationTest {
 
         MedicationComponent contentor = new Contentor(medications);
 
-        assertTrue(2.0 + 3.0 + 4.0 == contentor.getPrice());
+        Double expected = 2.0 + 3.0 + 4.0;
+
+        assertEquals(expected, contentor.getPrice());
     }
 
     @Test
@@ -99,8 +101,9 @@ public class MedicationTest {
         medications.add(new Vacina(4.0));
 
         MedicationComponent caixa = new Caixa(medications);
+        Double expected = 2.0 + 3.0 + 4.0;
 
-        assertTrue(2.0 + 3.0 + 4.0 == caixa.getPrice());
+        assertEquals(expected, caixa.getPrice());
     }
 
     @Test
@@ -125,8 +128,9 @@ public class MedicationTest {
         medications.add(new Vacina(4.0));
 
         MedicationComponent embalagem = new Embalagem(medications);
+        Double expected = 2.0 + 3.0 + 4.0;
 
-        assertTrue(2.0 + 3.0 + 4.0 == embalagem.getPrice());
+        assertEquals(expected, embalagem.getPrice());
     }
 
     @Test

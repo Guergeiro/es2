@@ -2,7 +2,7 @@ package com.brenosalles.medication;
 
 public class Frasco extends Medication {
     // Constructor
-    protected Frasco(Double price) {
+    public Frasco(Double price) {
         super(price);
     }
 

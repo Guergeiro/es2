@@ -2,7 +2,7 @@ package com.brenosalles.medication;
 
 public class Comprimido extends Medication {
     // Constructor
-    protected Comprimido(Double price) {
+    public Comprimido(Double price) {
         super(price);
     }
 
