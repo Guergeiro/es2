@@ -5,11 +5,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Authentication {
     // Attributes
     private static Authentication instance;
-    private ConcurrentHashMap<String, String> users;
+    private ConcurrentHashMap<String, String> users = new ConcurrentHashMap<String, String>();
 
     // Constructor
     private Authentication() {
-        users = new ConcurrentHashMap<String, String>();
+        /** Intentionally empty */
     }
 
     // Methods

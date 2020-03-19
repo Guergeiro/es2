@@ -1,16 +1,33 @@
 package com.brenosalles.medication;
 
-public abstract class Medication implements MedicationComponent {
+public class Medication implements MedicationComponent {
     // Attributes
-    protected Double price;
+    private Double price;
+    private MedicationComponentType type;
 
     // Constructor
-    protected Medication(Double price) {
-        this.price = price;
+    public Medication(MedicationComponentType type) {
+        this.price = 0.0;
+        this.type = type;
     }
 
     // Methods
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    @Override
+    public Double getPrice() {
+        return price;
+    }
+
+    @Override
+    public MedicationComponentType getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        return type.name();
     }
 }

@@ -7,11 +7,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
-import com.brenosalles.medication.Comprimido;
 import com.brenosalles.medication.Contentor;
-import com.brenosalles.medication.Frasco;
+import com.brenosalles.medication.Medication;
 import com.brenosalles.medication.MedicationComponent;
-import com.brenosalles.medication.Vacina;
+import com.brenosalles.medication.MedicationComponentType;
 
 import org.junit.Test;
 
@@ -42,11 +41,20 @@ public class TransportTest {
     @Test
     public void checkNormalTransportPrice() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        medications.add(new Frasco(2.0));
-        medications.add(new Comprimido(3.0));
-        medications.add(new Vacina(4.0));
+        Medication med = new Medication(MedicationComponentType.FRASCO);
+        med.setPrice(2.0);
+        medications.add(med);
 
-        MedicationComponent contentor = new Contentor(medications);
+        med = new Medication(MedicationComponentType.VACINA);
+        med.setPrice(3.0);
+        medications.add(med);
+
+        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med.setPrice(4.0);
+        medications.add(med);
+
+        Contentor contentor = new Contentor();
+        contentor.addAllChilds(medications);
         Transport normal = new NormalTransport(contentor);
 
         Double expected = (2.0 + 3.0 + 4.0) * 0.05;
@@ -57,11 +65,20 @@ public class TransportTest {
     @Test
     public void checkSpecialTransportPrice() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        medications.add(new Frasco(2.0));
-        medications.add(new Comprimido(3.0));
-        medications.add(new Vacina(4.0));
+        Medication med = new Medication(MedicationComponentType.FRASCO);
+        med.setPrice(2.0);
+        medications.add(med);
 
-        MedicationComponent contentor = new Contentor(medications);
+        med = new Medication(MedicationComponentType.VACINA);
+        med.setPrice(3.0);
+        medications.add(med);
+
+        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med.setPrice(4.0);
+        medications.add(med);
+
+        Contentor contentor = new Contentor();
+        contentor.addAllChilds(medications);
         Transport special = new SpecialTransport(contentor);
 
         Double expected = (2.0 + 3.0 + 4.0) * 0.10;

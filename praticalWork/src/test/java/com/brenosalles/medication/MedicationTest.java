@@ -1,12 +1,9 @@
 package com.brenosalles.medication;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
 import org.junit.AfterClass;
@@ -31,48 +28,23 @@ public class MedicationTest {
     }
 
     @Test
-    public void checkAbstractMedicationComposite() {
-        assertTrue(Modifier.isAbstract(MedicationComposite.class.getModifiers()));
-    }
-
-    @Test
-    public void checkProtectedConstructorMedicationComposite() throws NoSuchMethodException, SecurityException {
-        assertTrue(
-                Modifier.isProtected(MedicationComposite.class.getDeclaredConstructor(ArrayList.class).getModifiers()));
-    }
-
-    @Test
-    public void checkProtectedAttributesMedicationComposite() {
-        for (Field attribute : MedicationComposite.class.getDeclaredFields()) {
-            assertTrue(Modifier.isProtected(attribute.getModifiers()));
-        }
-    }
-
-    @Test
-    public void checkAbstractMedication() {
-        assertTrue(Modifier.isAbstract(Medication.class.getModifiers()));
-    }
-
-    @Test
-    public void checkProtectedConstructorMedication() throws NoSuchMethodException, SecurityException {
-        assertTrue(Modifier.isProtected(Medication.class.getDeclaredConstructor(Double.class).getModifiers()));
-    }
-
-    @Test
-    public void checkProtectedAttributesMedication() {
-        for (Field attribute : Medication.class.getDeclaredFields()) {
-            assertTrue(Modifier.isProtected(attribute.getModifiers()));
-        }
-    }
-
-    @Test
     public void testGetPriceContentor() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        medications.add(new Frasco(2.0));
-        medications.add(new Comprimido(3.0));
-        medications.add(new Vacina(4.0));
 
-        MedicationComponent contentor = new Contentor(medications);
+        Medication med = new Medication(MedicationComponentType.FRASCO);
+        med.setPrice(2.0);
+        medications.add(med);
+
+        med = new Medication(MedicationComponentType.VACINA);
+        med.setPrice(3.0);
+        medications.add(med);
+
+        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med.setPrice(4.0);
+        medications.add(med);
+
+        Contentor contentor = new Contentor();
+        contentor.addAllChilds(medications);
 
         Double expected = 2.0 + 3.0 + 4.0;
 
@@ -82,13 +54,22 @@ public class MedicationTest {
     @Test
     public void testOutputContentor() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        medications.add(new Frasco(2.0));
-        medications.add(new Comprimido(3.0));
-        medications.add(new Vacina(4.0));
+        Medication med = new Medication(MedicationComponentType.FRASCO);
+        med.setPrice(2.0);
+        medications.add(med);
 
-        MedicationComponent contentor = new Contentor(medications);
+        med = new Medication(MedicationComponentType.VACINA);
+        med.setPrice(3.0);
+        medications.add(med);
 
-        String expected = "Contentor\nFrasco\nComprimido\nVacina";
+        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med.setPrice(4.0);
+        medications.add(med);
+
+        Contentor contentor = new Contentor();
+        contentor.addAllChilds(medications);
+
+        String expected = "CONTENTOR\nFRASCO\nVACINA\nCOMPRIMIDO";
 
         assertEquals(expected, contentor.toString());
     }
@@ -96,11 +77,21 @@ public class MedicationTest {
     @Test
     public void testGetPriceCaixa() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        medications.add(new Frasco(2.0));
-        medications.add(new Comprimido(3.0));
-        medications.add(new Vacina(4.0));
+        Medication med = new Medication(MedicationComponentType.FRASCO);
+        med.setPrice(2.0);
+        medications.add(med);
 
-        MedicationComponent caixa = new Caixa(medications);
+        med = new Medication(MedicationComponentType.VACINA);
+        med.setPrice(3.0);
+        medications.add(med);
+
+        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med.setPrice(4.0);
+        medications.add(med);
+
+        Caixa caixa = new Caixa();
+        caixa.addAllChilds(medications);
+
         Double expected = 2.0 + 3.0 + 4.0;
 
         assertEquals(expected, caixa.getPrice());
@@ -109,13 +100,22 @@ public class MedicationTest {
     @Test
     public void testOutputCaixa() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        medications.add(new Frasco(2.0));
-        medications.add(new Comprimido(3.0));
-        medications.add(new Vacina(4.0));
+        Medication med = new Medication(MedicationComponentType.FRASCO);
+        med.setPrice(2.0);
+        medications.add(med);
 
-        MedicationComponent caixa = new Caixa(medications);
+        med = new Medication(MedicationComponentType.VACINA);
+        med.setPrice(3.0);
+        medications.add(med);
 
-        String expected = "Caixa\nFrasco\nComprimido\nVacina";
+        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med.setPrice(4.0);
+        medications.add(med);
+
+        Caixa caixa = new Caixa();
+        caixa.addAllChilds(medications);
+
+        String expected = "CAIXA\nFRASCO\nVACINA\nCOMPRIMIDO";
 
         assertEquals(expected, caixa.toString());
     }
@@ -123,11 +123,21 @@ public class MedicationTest {
     @Test
     public void testGetPriceEmbalagem() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        medications.add(new Frasco(2.0));
-        medications.add(new Comprimido(3.0));
-        medications.add(new Vacina(4.0));
+        Medication med = new Medication(MedicationComponentType.FRASCO);
+        med.setPrice(2.0);
+        medications.add(med);
 
-        MedicationComponent embalagem = new Embalagem(medications);
+        med = new Medication(MedicationComponentType.VACINA);
+        med.setPrice(3.0);
+        medications.add(med);
+
+        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med.setPrice(4.0);
+        medications.add(med);
+
+        Embalagem embalagem = new Embalagem();
+        embalagem.addAllChilds(medications);
+
         Double expected = 2.0 + 3.0 + 4.0;
 
         assertEquals(expected, embalagem.getPrice());
@@ -136,13 +146,22 @@ public class MedicationTest {
     @Test
     public void testOutputEmbalagem() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        medications.add(new Frasco(2.0));
-        medications.add(new Comprimido(3.0));
-        medications.add(new Vacina(4.0));
+        Medication med = new Medication(MedicationComponentType.FRASCO);
+        med.setPrice(2.0);
+        medications.add(med);
 
-        MedicationComponent embalagem = new Embalagem(medications);
+        med = new Medication(MedicationComponentType.VACINA);
+        med.setPrice(3.0);
+        medications.add(med);
 
-        String expected = "Embalagem\nFrasco\nComprimido\nVacina";
+        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med.setPrice(4.0);
+        medications.add(med);
+
+        Embalagem embalagem = new Embalagem();
+        embalagem.addAllChilds(medications);
+
+        String expected = "EMBALAGEM\nFRASCO\nVACINA\nCOMPRIMIDO";
 
         assertEquals(expected, embalagem.toString());
     }
