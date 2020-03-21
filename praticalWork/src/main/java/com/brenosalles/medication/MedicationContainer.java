@@ -2,8 +2,6 @@ package com.brenosalles.medication;
 
 import java.util.ArrayList;
 
-import com.brenosalles.transport.Transport;
-
 public class MedicationContainer implements MedicationComponent {
     // Attributes
     private ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
