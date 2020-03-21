@@ -11,6 +11,6 @@ public class NormalTransport extends Transport {
     // Methods
     @Override
     public Double getTransportCost() {
-        return medication.getPrice() * 0.05;
+        return super.medication.getPrice() * 0.05;
     }
 }

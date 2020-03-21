@@ -31,19 +31,23 @@ public class MedicationTest {
     public void testGetPriceContentor() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
 
-        Medication med = new Medication(MedicationComponentType.FRASCO);
+        MedicationLeaf med = new MedicationLeaf();
+        med.setType(MedicationLeafType.FRASCO);
         med.setPrice(2.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.VACINA);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.VACINA);
         med.setPrice(3.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.COMPRIMIDO);
         med.setPrice(4.0);
         medications.add(med);
 
-        Contentor contentor = new Contentor();
+        MedicationContainer contentor = new MedicationContainer();
+        contentor.setType(MedicationContainerType.CONTENTOR);
         contentor.addAllChilds(medications);
 
         Double expected = 2.0 + 3.0 + 4.0;
@@ -54,19 +58,24 @@ public class MedicationTest {
     @Test
     public void testOutputContentor() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        Medication med = new Medication(MedicationComponentType.FRASCO);
+
+        MedicationLeaf med = new MedicationLeaf();
+        med.setType(MedicationLeafType.FRASCO);
         med.setPrice(2.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.VACINA);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.VACINA);
         med.setPrice(3.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.COMPRIMIDO);
         med.setPrice(4.0);
         medications.add(med);
 
-        Contentor contentor = new Contentor();
+        MedicationContainer contentor = new MedicationContainer();
+        contentor.setType(MedicationContainerType.CONTENTOR);
         contentor.addAllChilds(medications);
 
         String expected = "CONTENTOR\nFRASCO\nVACINA\nCOMPRIMIDO";
@@ -77,19 +86,24 @@ public class MedicationTest {
     @Test
     public void testGetPriceCaixa() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        Medication med = new Medication(MedicationComponentType.FRASCO);
+
+        MedicationLeaf med = new MedicationLeaf();
+        med.setType(MedicationLeafType.FRASCO);
         med.setPrice(2.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.VACINA);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.VACINA);
         med.setPrice(3.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.COMPRIMIDO);
         med.setPrice(4.0);
         medications.add(med);
 
-        Caixa caixa = new Caixa();
+        MedicationContainer caixa = new MedicationContainer();
+        caixa.setType(MedicationContainerType.CAIXA);
         caixa.addAllChilds(medications);
 
         Double expected = 2.0 + 3.0 + 4.0;
@@ -100,19 +114,24 @@ public class MedicationTest {
     @Test
     public void testOutputCaixa() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        Medication med = new Medication(MedicationComponentType.FRASCO);
+
+        MedicationLeaf med = new MedicationLeaf();
+        med.setType(MedicationLeafType.FRASCO);
         med.setPrice(2.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.VACINA);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.VACINA);
         med.setPrice(3.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.COMPRIMIDO);
         med.setPrice(4.0);
         medications.add(med);
 
-        Caixa caixa = new Caixa();
+        MedicationContainer caixa = new MedicationContainer();
+        caixa.setType(MedicationContainerType.CAIXA);
         caixa.addAllChilds(medications);
 
         String expected = "CAIXA\nFRASCO\nVACINA\nCOMPRIMIDO";
@@ -123,19 +142,24 @@ public class MedicationTest {
     @Test
     public void testGetPriceEmbalagem() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        Medication med = new Medication(MedicationComponentType.FRASCO);
+
+        MedicationLeaf med = new MedicationLeaf();
+        med.setType(MedicationLeafType.FRASCO);
         med.setPrice(2.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.VACINA);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.VACINA);
         med.setPrice(3.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.COMPRIMIDO);
         med.setPrice(4.0);
         medications.add(med);
 
-        Embalagem embalagem = new Embalagem();
+        MedicationContainer embalagem = new MedicationContainer();
+        embalagem.setType(MedicationContainerType.EMBALAGEM);
         embalagem.addAllChilds(medications);
 
         Double expected = 2.0 + 3.0 + 4.0;
@@ -146,19 +170,24 @@ public class MedicationTest {
     @Test
     public void testOutputEmbalagem() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        Medication med = new Medication(MedicationComponentType.FRASCO);
+
+        MedicationLeaf med = new MedicationLeaf();
+        med.setType(MedicationLeafType.FRASCO);
         med.setPrice(2.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.VACINA);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.VACINA);
         med.setPrice(3.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.COMPRIMIDO);
         med.setPrice(4.0);
         medications.add(med);
 
-        Embalagem embalagem = new Embalagem();
+        MedicationContainer embalagem = new MedicationContainer();
+        embalagem.setType(MedicationContainerType.EMBALAGEM);
         embalagem.addAllChilds(medications);
 
         String expected = "EMBALAGEM\nFRASCO\nVACINA\nCOMPRIMIDO";

@@ -7,10 +7,11 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
-import com.brenosalles.medication.Contentor;
-import com.brenosalles.medication.Medication;
+import com.brenosalles.medication.MedicationLeaf;
+import com.brenosalles.medication.MedicationLeafType;
 import com.brenosalles.medication.MedicationComponent;
-import com.brenosalles.medication.MedicationComponentType;
+import com.brenosalles.medication.MedicationContainer;
+import com.brenosalles.medication.MedicationContainerType;
 
 import org.junit.Test;
 
@@ -41,20 +42,26 @@ public class TransportTest {
     @Test
     public void checkNormalTransportPrice() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        Medication med = new Medication(MedicationComponentType.FRASCO);
+
+        MedicationLeaf med = new MedicationLeaf();
+        med.setType(MedicationLeafType.FRASCO);
         med.setPrice(2.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.VACINA);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.VACINA);
         med.setPrice(3.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.COMPRIMIDO);
         med.setPrice(4.0);
         medications.add(med);
 
-        Contentor contentor = new Contentor();
+        MedicationContainer contentor = new MedicationContainer();
+        contentor.setType(MedicationContainerType.CONTENTOR);
         contentor.addAllChilds(medications);
+
         Transport normal = new NormalTransport(contentor);
 
         Double expected = (2.0 + 3.0 + 4.0) * 0.05;
@@ -65,20 +72,26 @@ public class TransportTest {
     @Test
     public void checkSpecialTransportPrice() {
         ArrayList<MedicationComponent> medications = new ArrayList<MedicationComponent>();
-        Medication med = new Medication(MedicationComponentType.FRASCO);
+
+        MedicationLeaf med = new MedicationLeaf();
+        med.setType(MedicationLeafType.FRASCO);
         med.setPrice(2.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.VACINA);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.VACINA);
         med.setPrice(3.0);
         medications.add(med);
 
-        med = new Medication(MedicationComponentType.COMPRIMIDO);
+        med = new MedicationLeaf();
+        med.setType(MedicationLeafType.COMPRIMIDO);
         med.setPrice(4.0);
         medications.add(med);
 
-        Contentor contentor = new Contentor();
+        MedicationContainer contentor = new MedicationContainer();
+        contentor.setType(MedicationContainerType.CONTENTOR);
         contentor.addAllChilds(medications);
+
         Transport special = new SpecialTransport(contentor);
 
         Double expected = (2.0 + 3.0 + 4.0) * 0.10;
