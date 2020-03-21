@@ -10,6 +10,7 @@ branches:
     - master
 env:
   - WORKDIR=patterns
+  - WORKDIR=praticalWork
 before_script:
   - cd $WORKDIR
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V

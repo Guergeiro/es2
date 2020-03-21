@@ -25,3 +25,7 @@ Existem **3 tipos de padrões**:
 5. [Composite](./src/main/composite)
 6. [Memento](./src/main/memento)
 7. [Decorator](./src/main/decorator)
+
+## Trabalho Prático
+
+Os requisitos e resolução do trabalho prático estão disponíveis em [Pratical Work](./praticalWork).
