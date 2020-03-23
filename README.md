@@ -18,10 +18,14 @@ Existem **3 tipos de padrões**:
 
 ## Ordem da implementação
 
-1. [Singleton](./patterns/src/main/singleton)
-2. [ObjectPool](./patterns/src/main/objectpool)
-3. [Factory Method](./patterns/src/main/factorymethod)
-4. [Bridge](./patterns/src/main/bridge)
-5. [Composite](./patterns/src/main/composite)
-6. [Memento](./patterns/src/main/memento)
-7. [Decorator](./patterns/src/main/decorator)
+1. [Singleton](./src/main/singleton)
+2. [ObjectPool](./src/main/objectpool)
+3. [Factory Method](./src/main/factorymethod)
+4. [Bridge](./src/main/bridge)
+5. [Composite](./src/main/composite)
+6. [Memento](./src/main/memento)
+7. [Decorator](./src/main/decorator)
+
+## Trabalho Prático
+
+Os requisitos e resolução do trabalho prático estão disponíveis em [Pratical Work](./praticalWork).
