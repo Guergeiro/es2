@@ -24,7 +24,11 @@ public class ReusablePool {
     // Getters & Setters
     public static ReusablePool getInstance() {
         if (instance == null) {
-            instance = new ReusablePool();
+            synchronized (ReusablePool.class) {
+                if (instance == null) {
+                    instance = new ReusablePool();
+                }
+            }
         }
         return instance;
     }
